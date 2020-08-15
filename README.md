@@ -11,7 +11,7 @@ $ docker build -t sidekiq-web:dev .
 ## Run
 
 ```
-$ docker run -P -e REDIS_URL=<the redis url> -it sidekiq-web:dev
+$ docker run -p 9292:9292 -e REDIS_URL=<the redis url> -it meoooh/standalone-sidekiq-web
 ```
 
 ## Configuration
