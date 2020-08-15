@@ -1,5 +1,4 @@
 FROM ruby:alpine
-MAINTAINER Derek Smith <drsmith.phys@gmail.com>
 
 # Make ap dir
 RUN mkdir -p /usr/src/sidekiq
@@ -8,6 +7,8 @@ WORKDIR /usr/src/sidekiq
 # ADD Gemfile
 ADD Gemfile /usr/src/sidekiq/
 ADD Gemfile.lock /usr/src/sidekiq/
+
+RUN bundle update --bundler
 
 # Install sidekiq & rack
 RUN bundle install
